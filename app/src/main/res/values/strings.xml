@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Ecommerce</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_home">Inicio</string>
+    <string name="nav_near_me">Cerca de mí</string>
+    <string name="nav_search">Buscar</string>
+    <string name="nav_brand">Marca</string>
+    <string name="nav_category">Categoría</string>
+
+
+    <string name="header_user">Ricardo Bravo</string>
+    <string name="header_email">ricardobravo@outlook.com</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>

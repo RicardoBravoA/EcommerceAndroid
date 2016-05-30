@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/selector_home"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/selector_search"
+            android:title="@string/nav_search" />
+        <item
+            android:id="@+id/nav_brand"
+            android:icon="@drawable/selector_brand"
+            android:title="@string/nav_brand" />
+        <item
+            android:id="@+id/nav_category"
+            android:icon="@drawable/selector_category"
+            android:title="@string/nav_category" />
+        <item
+            android:id="@+id/nav_near_me"
+            android:icon="@drawable/selector_near_me"
+            android:title="@string/nav_near_me" />
+    </group>
+
+</menu>
