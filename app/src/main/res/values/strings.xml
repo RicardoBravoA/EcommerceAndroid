@@ -15,4 +15,19 @@
     <string name="header_user">Ricardo Bravo</string>
     <string name="header_email">ricardobravo@outlook.com</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_presentation">PresentationActivity</string>
+
+
+
+    <!--PresentationActivity-->
+    <string name="pa_what_is_smile">¿QUÉ ES SMILE?</string>
+    <string name="pa_what_is_smile_description">Smile es la mejor opción a la hora de buscar una oferta.</string>
+    <string name="pa_all_benefits">TODOS TUS BENEFICIOS</string>
+    <string name="pa_all_benefits_description">Agrega una tarjeta para tener tus beneficios en un sólo lugar.</string>
+    <string name="pa_much_filters">MUCHOS FILTROS</string>
+    <string name="pa_much_filters_description">Una vez agregada la tarjeta podrás encontrar todas tus ofertas aquí.</string>
+    <string name="pa_specific_notification">NOTIFICATION ESPECÍFICAS</string>
+    <string name="pa_specific_notification_description">Marca negocios como tus favoritos para recibir notificaciones
+    de aquellas marcas que te gustan</string>
+    <!---->
 </resources>
