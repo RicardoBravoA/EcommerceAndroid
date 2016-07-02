@@ -26,9 +26,12 @@ public class BrandFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_brand, container, false);
+        return inflater.inflate(R.layout.fragment_brand, container, false);
+    }
 
-        return rootView;
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
     }
 
     @Override
@@ -40,4 +43,5 @@ public class BrandFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
 }

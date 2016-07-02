@@ -8,6 +8,9 @@
     <color name="color_normal">#607D8B</color>
     <color name="smile_color">#552C92</color>
 
+    <color name="deep_green_700_alpha_50">#80388E3C</color>
+    <color name="app_background_color">#ffffffff</color>
+
 
     <!-- opacity
 
