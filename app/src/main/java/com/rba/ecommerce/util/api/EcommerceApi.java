@@ -24,6 +24,9 @@ public interface EcommerceApi {
     @GET(Constant.URL_CATEGORY_ALL)
     Call<CategoryResponse> getAllCategory();
 
+    @GET(Constant.URL_CATEGORY_PRODUCT)
+    Call<CategoryResponse> getAllCategoryProduct();
+
     @GET(Constant.URL_PRODUCT_BRAND)
     Call<ProductBrandResponse> getProductByBrand(@Path("id") String id);
 

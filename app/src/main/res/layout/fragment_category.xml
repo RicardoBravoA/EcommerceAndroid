@@ -1,14 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    tools:context=".view.fragment.BrandFragment">
 
-    <TextView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swpRefresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/nav_search"/>
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/linError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/lblText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"
+            android:gravity="center"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnRetry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"/>
+
+    </LinearLayout>
+
+</FrameLayout>

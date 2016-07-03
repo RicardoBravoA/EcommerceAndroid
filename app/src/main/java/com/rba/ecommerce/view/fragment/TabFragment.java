@@ -71,8 +71,6 @@ public class TabFragment extends Fragment implements View.OnClickListener,
         swpRefresh = (SwipeRefreshLayout) view.findViewById(R.id.swpRefresh);
         productEntityList = new ArrayList<>();
 
-        getProduct();
-
         swpRefresh.setOnRefreshListener(this);
 
         swpRefresh.post(new Runnable() {

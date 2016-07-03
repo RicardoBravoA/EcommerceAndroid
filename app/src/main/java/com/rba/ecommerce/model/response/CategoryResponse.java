@@ -8,7 +8,6 @@ import java.util.List;
 
 public class CategoryResponse {
 
-
     /**
      * status : success
      * code : 200
@@ -17,7 +16,9 @@ public class CategoryResponse {
     private MetaEntity _meta;
     /**
      * category_id : 1
-     * description : Category 1
+     * description : Casual
+     * image : http://1.bp.blogspot.com/-4oJsZJxPDLs/UWml6HmxIVI/AAAAAAAAFZ4/IfZUnScD3dU/s1600/Zapatillas+Running+Adidas+Climacool+Clima+Cool+Revolution+Men+Hombre+David+Beckham+5.jpg
+     * total : 6
      */
 
     private List<DataEntity> data;
@@ -62,6 +63,8 @@ public class CategoryResponse {
     public static class DataEntity {
         private int category_id;
         private String description;
+        private String image;
+        private int total;
 
         public int getCategory_id() {
             return category_id;
@@ -77,6 +80,22 @@ public class CategoryResponse {
 
         public void setDescription(String description) {
             this.description = description;
+        }
+
+        public String getImage() {
+            return image;
+        }
+
+        public void setImage(String image) {
+            this.image = image;
+        }
+
+        public int getTotal() {
+            return total;
+        }
+
+        public void setTotal(int total) {
+            this.total = total;
         }
     }
 }

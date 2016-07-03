@@ -10,6 +10,7 @@ public class Constant {
     public static final String URL_BRAND_ALL = "brand/";
     public static final String URL_BRAND_PRODUCT = "brand/product/";
     public static final String URL_CATEGORY_ALL = "category/";
+    public static final String URL_CATEGORY_PRODUCT = "category/product";
     public static final String URL_PRODUCT_BRAND = "brand/{id}/product";
 
     public static final int VAR_ONE = 1;
