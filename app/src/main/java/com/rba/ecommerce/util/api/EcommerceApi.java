@@ -1,6 +1,7 @@
 package com.rba.ecommerce.util.api;
 
 import com.rba.ecommerce.model.response.BrandResponse;
+import com.rba.ecommerce.model.response.CategoryResponse;
 import com.rba.ecommerce.model.response.ProductBrandResponse;
 import com.rba.ecommerce.util.Constant;
 
@@ -16,6 +17,12 @@ public interface EcommerceApi {
 
     @GET(Constant.URL_BRAND_ALL)
     Call<BrandResponse> getAllBrand();
+
+    @GET(Constant.URL_BRAND_PRODUCT)
+    Call<BrandResponse> getAllBrandProduct();
+
+    @GET(Constant.URL_CATEGORY_ALL)
+    Call<CategoryResponse> getAllCategory();
 
     @GET(Constant.URL_PRODUCT_BRAND)
     Call<ProductBrandResponse> getProductByBrand(@Path("id") String id);

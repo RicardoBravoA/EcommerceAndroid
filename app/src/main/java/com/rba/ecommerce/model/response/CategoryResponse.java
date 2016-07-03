@@ -3,10 +3,11 @@ package com.rba.ecommerce.model.response;
 import java.util.List;
 
 /**
- * Created by Ricardo Bravo on 2/07/16.
+ * Created by Ricardo Bravo on 3/07/16.
  */
 
-public class BrandResponse {
+public class CategoryResponse {
+
 
     /**
      * status : success
@@ -15,10 +16,8 @@ public class BrandResponse {
 
     private MetaEntity _meta;
     /**
-     * brand_id : 1
-     * description : Adidas
-     * image : http://5.kicksonfire.net/wp-content/uploads/2016/02/adidas-logo.jpg?6ce6a3
-     * total : 5
+     * category_id : 1
+     * description : Category 1
      */
 
     private List<DataEntity> data;
@@ -61,17 +60,15 @@ public class BrandResponse {
     }
 
     public static class DataEntity {
-        private int brand_id;
+        private int category_id;
         private String description;
-        private String image;
-        private int total;
 
-        public int getBrand_id() {
-            return brand_id;
+        public int getCategory_id() {
+            return category_id;
         }
 
-        public void setBrand_id(int brand_id) {
-            this.brand_id = brand_id;
+        public void setCategory_id(int category_id) {
+            this.category_id = category_id;
         }
 
         public String getDescription() {
@@ -80,22 +77,6 @@ public class BrandResponse {
 
         public void setDescription(String description) {
             this.description = description;
-        }
-
-        public String getImage() {
-            return image;
-        }
-
-        public void setImage(String image) {
-            this.image = image;
-        }
-
-        public int getTotal() {
-            return total;
-        }
-
-        public void setTotal(int total) {
-            this.total = total;
         }
     }
 }
