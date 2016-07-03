@@ -46,7 +46,6 @@ public class HomeFragment extends Fragment {
 
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
     }
 
 
@@ -63,11 +62,16 @@ public class HomeFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
+
+
         adapter.addFragment(new TabFragment().newInstance("uno"), "Uno");
         adapter.addFragment(new TabFragment().newInstance("dos"), "Dos");
         adapter.addFragment(new TabFragment().newInstance("tres"), "Tres");
+
+
         viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     class ViewPagerAdapter extends FragmentStatePagerAdapter {

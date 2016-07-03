@@ -26,4 +26,9 @@ dependencies {
     compile 'com.android.support:design:23.4.0'
     compile 'com.nightonke:wowoviewpager:1.0.2'
     compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:retrofit-converters:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
