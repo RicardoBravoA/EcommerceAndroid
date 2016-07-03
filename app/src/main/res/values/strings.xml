@@ -32,4 +32,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!---->
+
+    <string name="verify_connection">Verifique su conexión a internet</string>
+    <string name="error_ocurred">Ocurrió un error</string>
+    <string name="success">success</string>
+    <string name="retry">Reintentar</string>
 </resources>

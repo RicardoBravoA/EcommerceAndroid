@@ -9,4 +9,6 @@ public class Constant {
     public static final String URL_BASE = "http://192.168.1.41:8888/EcommerceApi/v1/";
     public static final String URL_BRAND_ALL = "brand/";
 
+    public static final int VAR_ONE = 1;
+
 }

@@ -4,7 +4,6 @@ package com.rba.ecommerce.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +23,10 @@ public class TabFragment extends Fragment {
     public TabFragment() {
     }
 
-    public TabFragment newInstance(String  code){
+    public TabFragment newInstance(int  code){
         TabFragment tabFragment = new TabFragment();
         Bundle args = new Bundle();
-        args.putString(CODE, code);
+        args.putInt(CODE, code);
         tabFragment.setArguments(args);
         return tabFragment;
     }
@@ -42,7 +41,7 @@ public class TabFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         lblText = (TextView) view.findViewById(R.id.lblText);
-        lblText.setText("fragment "+getArguments().getString(CODE));
+        lblText.setText("fragment "+getArguments().getInt(CODE));
     }
 
 }
