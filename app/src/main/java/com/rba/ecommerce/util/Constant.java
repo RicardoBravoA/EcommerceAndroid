@@ -11,5 +11,6 @@ public class Constant {
     public static final String URL_PRODUCT_BRAND = "brand/{id}/product";
 
     public static final int VAR_ONE = 1;
+    public static final String PROD_OBJ = "PROD_OBJ";
 
 }

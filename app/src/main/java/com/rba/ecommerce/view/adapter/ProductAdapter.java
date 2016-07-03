@@ -1,6 +1,7 @@
 package com.rba.ecommerce.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 
 import com.rba.ecommerce.R;
 import com.rba.ecommerce.model.response.ProductBrandResponse;
+import com.rba.ecommerce.ui.DetailActivity;
+import com.rba.ecommerce.util.Constant;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -78,9 +81,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.cvGeneral:
-                    Toast.makeText(context, "Pressed: "
-                                    +productEntityList.get(getAdapterPosition()).getDescription(),
-                            Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(context, DetailActivity.class);
+                    i.putExtra(Constant.PROD_OBJ, productEntityList.get(getAdapterPosition()));
+                    context.startActivity(i);
                     break;
                 default:
                     break;

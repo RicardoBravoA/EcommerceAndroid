@@ -1,12 +1,13 @@
 package com.rba.ecommerce.model.response;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Ricardo Bravo on 2/07/16.
  */
 
-public class ProductBrandResponse {
+public class ProductBrandResponse implements Serializable {
 
 
     /**
@@ -66,7 +67,7 @@ public class ProductBrandResponse {
         }
     }
 
-    public static class DataEntity {
+    public static class DataEntity implements Serializable {
         private int product_id;
         private String description;
         private String price;

@@ -38,4 +38,5 @@
     <string name="success">success</string>
     <string name="retry">Reintentar</string>
     <string name="price_text">S/. %1$s</string>
+    <string name="title_activity_detail">DetailActivity</string>
 </resources>
