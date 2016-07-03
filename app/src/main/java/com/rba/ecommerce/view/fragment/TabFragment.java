@@ -1,9 +1,9 @@
 package com.rba.ecommerce.view.fragment;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
@@ -33,7 +33,8 @@ import retrofit2.Response;
  * Created by Ricardo Bravo on 02/07/16.
  */
 
-public class TabFragment extends Fragment implements View.OnClickListener {
+public class TabFragment extends Fragment implements View.OnClickListener,
+        SwipeRefreshLayout.OnRefreshListener {
 
     private static final String CODE = "code";
     private RecyclerView rcvProduct;
@@ -42,6 +43,7 @@ public class TabFragment extends Fragment implements View.OnClickListener {
     private TextView lblText;
     private AppCompatButton btnRetry;
     private LinearLayout linError;
+    private SwipeRefreshLayout swpRefresh;
 
     public TabFragment() {
     }
@@ -66,13 +68,29 @@ public class TabFragment extends Fragment implements View.OnClickListener {
         linError = (LinearLayout) view.findViewById(R.id.linError);
         btnRetry = (AppCompatButton) view.findViewById(R.id.btnRetry);
         rcvProduct = (RecyclerView) view.findViewById(R.id.rcvProduct);
+        swpRefresh = (SwipeRefreshLayout) view.findViewById(R.id.swpRefresh);
         productEntityList = new ArrayList<>();
 
         getProduct();
 
+        swpRefresh.setOnRefreshListener(this);
+
+        swpRefresh.post(new Runnable() {
+            @Override
+            public void run() {
+                swpRefresh.setRefreshing(true);
+                getProduct();
+            }
+        });
+
     }
 
     private void getProduct(){
+
+        if(productEntityList.size()>0){
+            productEntityList.clear();
+        }
+
         if(ConnectionDetector.isInternet(getActivity())){
 
             Call<ProductBrandResponse> call = EcommerceApiManager.apiManager()
@@ -96,6 +114,8 @@ public class TabFragment extends Fragment implements View.OnClickListener {
                             rcvProduct.setItemAnimator(new DefaultItemAnimator());
                             rcvProduct.setAdapter(productAdapter);
                         }
+
+                        swpRefresh.setRefreshing(false);
 
                     }else{
                         showError(true, getString(R.string.error_ocurred));
@@ -135,4 +155,20 @@ public class TabFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    @Override
+    public void onRefresh() {
+        getProduct();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        if(swpRefresh.isRefreshing()){
+            swpRefresh.setRefreshing(false);
+        }
+
+    }
+
 }
