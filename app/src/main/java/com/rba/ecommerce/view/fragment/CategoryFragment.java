@@ -1,4 +1,4 @@
-package com.rba.ecommerce.fragment;
+package com.rba.ecommerce.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,9 +14,9 @@ import com.rba.ecommerce.R;
  * Created by Ricardo Bravo on 29/05/16.
  */
 
-public class SearchFragment extends Fragment {
+public class CategoryFragment extends Fragment {
 
-    public SearchFragment(){}
+    public CategoryFragment(){}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,9 +26,12 @@ public class SearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_search, container, false);
+        return inflater.inflate(R.layout.fragment_category, container, false);
+    }
 
-        return rootView;
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
     }
 
     @Override

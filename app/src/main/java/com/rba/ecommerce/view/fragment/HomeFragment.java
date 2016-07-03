@@ -1,4 +1,4 @@
-package com.rba.ecommerce.fragment;
+package com.rba.ecommerce.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -171,8 +171,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             linGeneral.setVisibility(View.VISIBLE);
             linError.setVisibility(View.GONE);
         }
-
-
     }
 
     @Override

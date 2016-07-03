@@ -1,11 +1,10 @@
-package com.rba.ecommerce.activity;
+package com.rba.ecommerce.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.nightonke.wowoviewpager.Eases.EaseType;

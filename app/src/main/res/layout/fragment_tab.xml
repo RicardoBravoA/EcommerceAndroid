@@ -2,15 +2,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rba.ecommerce.fragment.TabFragment">
+    tools:context=".view.fragment.TabFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/lblText"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvProduct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/linError"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/lblText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"
+            android:gravity="center"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnRetry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"/>
+
+    </LinearLayout>
 
 </FrameLayout>

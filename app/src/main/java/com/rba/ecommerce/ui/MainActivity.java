@@ -1,5 +1,5 @@
 
-package com.rba.ecommerce.activity;
+package com.rba.ecommerce.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -14,11 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.rba.ecommerce.R;
-import com.rba.ecommerce.fragment.BrandFragment;
-import com.rba.ecommerce.fragment.CategoryFragment;
-import com.rba.ecommerce.fragment.HomeFragment;
-import com.rba.ecommerce.fragment.NearMeFragment;
-import com.rba.ecommerce.fragment.SearchFragment;
+import com.rba.ecommerce.view.fragment.BrandFragment;
+import com.rba.ecommerce.view.fragment.CategoryFragment;
+import com.rba.ecommerce.view.fragment.HomeFragment;
+import com.rba.ecommerce.view.fragment.NearMeFragment;
+import com.rba.ecommerce.view.fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

@@ -1,4 +1,4 @@
-package com.rba.ecommerce.activity;
+package com.rba.ecommerce.ui;
 
 import android.content.Intent;
 import android.os.Handler;

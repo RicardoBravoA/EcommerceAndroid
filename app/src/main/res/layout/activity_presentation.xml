@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/colorPrimary"
-    tools:context="com.rba.ecommerce.activity.PresentationActivity">
+    tools:context="com.rba.ecommerce.ui.PresentationActivity">
 
     <com.nightonke.wowoviewpager.WoWoViewPager
         android:id="@+id/wowo_viewpager"
