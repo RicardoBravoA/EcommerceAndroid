@@ -8,6 +8,17 @@
     <color name="color_normal">#607D8B</color>
     <color name="smile_color">#552C92</color>
 
+    <color name="dark_grey">#333333</color>
+    <color name="light_grey">#bbbbbb</color>
+    <color name="white">#ffffff</color>
+
+    <color name="selected_color">@color/colorAccent</color>
+    <color name="selected_font_color">@color/white</color>
+
+    <color name="deselected_color">@color/colorPrimary</color>
+    <color name="deselected_font_color">@color/white</color>
+
+
     <color name="deep_green_700_alpha_50">#80388E3C</color>
     <color name="app_background_color">#ffffffff</color>
 

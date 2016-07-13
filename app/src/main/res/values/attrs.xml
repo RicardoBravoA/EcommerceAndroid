@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TagGroup">
+        <attr name="deselectedColor" format="color" />
+        <attr name="deselectedFontColor" format="color" />
+        <attr name="selectedColor" format="color" />
+        <attr name="selectedFontColor" format="color" />
+        <attr name="selectTransitionMS" format="integer" />
+        <attr name="deselectTransitionMS" format="integer" />
+        <attr name="selectMode">
+            <enum name="single" value="0" />
+            <enum name="multi" value="1" />
+            <enum name="required" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

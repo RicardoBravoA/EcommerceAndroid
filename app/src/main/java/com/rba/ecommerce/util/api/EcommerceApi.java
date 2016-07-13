@@ -2,6 +2,7 @@ package com.rba.ecommerce.util.api;
 
 import com.rba.ecommerce.model.response.BrandResponse;
 import com.rba.ecommerce.model.response.CategoryResponse;
+import com.rba.ecommerce.model.response.FilterResponse;
 import com.rba.ecommerce.model.response.ProductBrandResponse;
 import com.rba.ecommerce.util.Constant;
 
@@ -23,6 +24,9 @@ public interface EcommerceApi {
 
     @GET(Constant.URL_CATEGORY_ALL)
     Call<CategoryResponse> getAllCategory();
+
+    @GET(Constant.URL_FILTER)
+    Call<FilterResponse> getAllFilter();
 
     @GET(Constant.URL_CATEGORY_PRODUCT)
     Call<CategoryResponse> getAllCategoryProduct();

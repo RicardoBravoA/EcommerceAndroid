@@ -6,10 +6,11 @@ package com.rba.ecommerce.util;
 
 public class Constant {
 
-    public static final String URL_BASE = "http://192.168.1.41:8888/EcommerceApi/v1/";
+    public static final String URL_BASE = "http://192.168.1.38:8888/EcommerceApi/v1/";
     public static final String URL_BRAND_ALL = "brand/";
     public static final String URL_BRAND_PRODUCT = "brand/product/";
     public static final String URL_CATEGORY_ALL = "category/";
+    public static final String URL_FILTER = "filter/";
     public static final String URL_CATEGORY_PRODUCT = "category/product";
     public static final String URL_PRODUCT_BRAND = "brand/{id}/product";
 
