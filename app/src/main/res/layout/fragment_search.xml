@@ -22,7 +22,7 @@
             app:selectedFontColor="@color/selected_font_color"
             app:deselectTransitionMS="@integer/deselectedTransition"
             app:selectTransitionMS="@integer/selectedTransition"
-            app:selectMode="single"/>
+            app:selectMode="required"/>
 
 
         <com.rba.ecommerce.util.control.menutag.TagGroup

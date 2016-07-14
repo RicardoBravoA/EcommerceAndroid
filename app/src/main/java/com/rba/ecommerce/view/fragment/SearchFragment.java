@@ -12,11 +12,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.rba.ecommerce.R;
 import com.rba.ecommerce.model.response.FilterResponse;
 import com.rba.ecommerce.util.api.EcommerceApiManager;
 import com.rba.ecommerce.util.control.menutag.TagGroup;
+import com.rba.ecommerce.util.control.menutag.listener.TagListener;
 import com.rba.ecommerce.util.http.ConnectionDetector;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,12 +30,13 @@ import retrofit2.Response;
  * Created by Ricardo Bravo on 29/05/16.
  */
 
-public class SearchFragment extends Fragment implements View.OnClickListener {
+public class SearchFragment extends Fragment implements View.OnClickListener, TagListener {
 
     private TagGroup tagGroupBrand = null, tagGroupCategory = null;
     private TextView lblText;
     private AppCompatButton btnRetry;
     private LinearLayout linError, linSearch;
+    private List<FilterResponse.DataEntity> dataEntity;
 
     public SearchFragment(){}
 
@@ -55,6 +60,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         linSearch = (LinearLayout) view.findViewById(R.id.linSearch);
         btnRetry = (AppCompatButton) view.findViewById(R.id.btnRetry);
 
+        tagGroupCategory.setTagListener(this);
+        tagGroupBrand.setTagListener(this);
         btnRetry.setOnClickListener(this);
 
         getData();
@@ -68,6 +75,14 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                 @Override
                 public void onResponse(Call<FilterResponse> call, Response<FilterResponse> response) {
                     if(response.isSuccessful()){
+
+                        dataEntity = response.body().getData();
+
+                        Log.i("x- brand", new Gson().toJson(dataEntity));
+
+                        tagGroupBrand.addTags(dataEntity);
+
+                        tagGroupBrand.setSelectedTag(0);
 
                     }else{
                         showError(true, getString(R.string.error_ocurred));
@@ -107,6 +122,29 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onTagDeselected(View view, int index) {
+
+
+
+    }
+
+    @Override
+    public void onTagSelected(View view, int index) {
+
+        tagGroupCategory.removeAllViews();
+
+        switch (view.getId()){
+            case R.id.tagGroupBrand:
+                Log.i("x- category", new Gson().toJson(dataEntity.get(index).getCategory()));
+                tagGroupCategory.addTags(dataEntity.get(index).getCategory());
+                break;
+            default:
+                break;
+        }
+
     }
 
     @Override

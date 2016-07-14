@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -124,26 +125,27 @@ public class Tag extends TextView implements View.OnClickListener {
         if (selected && !isLocked) {
             unselect();
             if (listener != null) {
-                listener.onTagDeselected(index);
+                listener.onTagDeselected(v, index);
             }
         } else if (!selected) {
             crossfader.startTransition(selectTransitionMS);
 
             setTextColor(selectedFontColor);
             if (listener != null) {
-                listener.onTagSelected(index);
+                listener.onTagSelected(v, index);
             }
         }
 
         selected = !selected;
     }
 
-    public void select() {
+    public void select(View view) {
         selected = true;
         crossfader.startTransition(selectTransitionMS);
         setTextColor(selectedFontColor);
+        Log.i("x- view", ""+view.getId());
         if (listener != null) {
-            listener.onTagSelected(index);
+            listener.onTagSelected(view, index);
         }
     }
 

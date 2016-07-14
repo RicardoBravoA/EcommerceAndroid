@@ -93,6 +93,11 @@ public class FilterResponse {
             this.category = category;
         }
 
+        @Override
+        public String toString() {
+            return description;
+        }
+
         public static class CategoryEntity {
             private int category_id;
             private String description;
@@ -111,6 +116,11 @@ public class FilterResponse {
 
             public void setDescription(String description) {
                 this.description = description;
+            }
+
+            @Override
+            public String toString() {
+                return description;
             }
         }
     }

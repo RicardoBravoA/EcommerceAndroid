@@ -3,6 +3,8 @@ package com.rba.ecommerce.util.control.menutag;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
 
 import com.rba.ecommerce.R;
 import com.rba.ecommerce.util.control.menutag.listener.TagListener;
@@ -135,8 +137,10 @@ public class TagGroup<T> extends TagLayout implements TagListener {
     }
 
     public void setSelectedTag(int index) {
+        View view = this;
+        Log.i("x- tg", ""+view.getId());
         Tag tag = (Tag) getChildAt(index);
-        tag.select();
+        tag.select(this);
         if(mode == Mode.REQUIRED){
             for (int i = 0; i < getChildCount(); i++) {
                 Tag chipp = (Tag) getChildAt(i);
@@ -150,7 +154,7 @@ public class TagGroup<T> extends TagLayout implements TagListener {
     }
 
     @Override
-    public void onTagSelected(int index) {
+    public void onTagSelected(View view, int index) {
 
         switch(mode){
             case SINGLE:
@@ -170,14 +174,14 @@ public class TagGroup<T> extends TagLayout implements TagListener {
         }
 
         if (tagListener != null) {
-            tagListener.onTagSelected(index);
+            tagListener.onTagSelected(this, index);
         }
     }
 
     @Override
-    public void onTagDeselected(int index) {
+    public void onTagDeselected(View view, int index) {
         if (tagListener != null) {
-            tagListener.onTagDeselected(index);
+            tagListener.onTagDeselected(this, index);
         }
     }
 
@@ -189,78 +193,4 @@ public class TagGroup<T> extends TagLayout implements TagListener {
         return false;
     }
 
-    public static class Configure<T> {
-        private TagGroup tagGroup;
-        private int selectedColor = -1;
-        private int selectedFontColor = -1;
-        private int deselectedColor = -1;
-        private int deselectedFontColor = -1;
-        private int selectTransitionMS = -1;
-        private int deselectTransitionMS = -1;
-        private Mode mode = null;
-        private List<T> labels = null;
-        private TagListener tagListener;
-
-        public Configure tagGroup(TagGroup tagGroup) {
-            this.tagGroup = tagGroup;
-            return this;
-        }
-
-        public Configure mode(Mode mode) {
-            this.mode = mode;
-            return this;
-        }
-
-        public Configure selectedColor(int selectedColor) {
-            this.selectedColor = selectedColor;
-            return this;
-        }
-
-        public Configure selectedFontColor(int selectedFontColor) {
-            this.selectedFontColor = selectedFontColor;
-            return this;
-        }
-
-        public Configure deselectedColor(int deselectedColor) {
-            this.deselectedColor = deselectedColor;
-            return this;
-        }
-
-        public Configure deselectedFontColor(int deselectedFontColor) {
-            this.deselectedFontColor = deselectedFontColor;
-            return this;
-        }
-
-        public Configure selectTransitionMS(int selectTransitionMS) {
-            this.selectTransitionMS = selectTransitionMS;
-            return this;
-        }
-
-        public Configure deselectTransitionMS(int deselectTransitionMS) {
-            this.deselectTransitionMS = deselectTransitionMS;
-            return this;
-        }
-
-        public Configure labels(List<T> labels) {
-            this.labels = labels;
-            return this;
-        }
-
-        public Configure tagListener(TagListener tagListener) {
-            this.tagListener = tagListener;
-            return this;
-        }
-
-        public void build() {
-            if(mode != null) tagGroup.setMode(mode);
-            if(selectedColor != -1) tagGroup.setSelectedColor(selectedColor);
-            if(selectedFontColor != -1) tagGroup.setSelectedFontColor(selectedFontColor);
-            if(deselectedColor != -1) tagGroup.setUnselectedColor(deselectedColor);
-            if(deselectedFontColor != -1) tagGroup.setUnselectedFontColor(deselectedFontColor);
-            if(selectTransitionMS != -1) tagGroup.setSelectTransitionMS(selectTransitionMS);
-            if(deselectTransitionMS != -1) tagGroup.setDeselectTransitionMS(deselectTransitionMS);
-            tagGroup.setTagListener(tagListener);
-            tagGroup.addTags(labels);
-        }
-    }
 }
