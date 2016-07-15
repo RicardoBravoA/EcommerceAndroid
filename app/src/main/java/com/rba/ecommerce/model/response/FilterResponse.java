@@ -21,6 +21,18 @@ public class FilterResponse {
      */
 
     private List<DataEntity> data;
+    /**
+     * brand_id : 1
+     * description : Adidas
+     */
+
+    private List<BrandEntity> brand;
+    /**
+     * category_id : 1
+     * description : Casual
+     */
+
+    private List<CategoryEntity> category;
 
     public MetaEntity get_meta() {
         return _meta;
@@ -36,6 +48,22 @@ public class FilterResponse {
 
     public void setData(List<DataEntity> data) {
         this.data = data;
+    }
+
+    public List<BrandEntity> getBrand() {
+        return brand;
+    }
+
+    public void setBrand(List<BrandEntity> brand) {
+        this.brand = brand;
+    }
+
+    public List<CategoryEntity> getCategory() {
+        return category;
+    }
+
+    public void setCategory(List<CategoryEntity> category) {
+        this.category = category;
     }
 
     public static class MetaEntity {
@@ -122,6 +150,58 @@ public class FilterResponse {
             public String toString() {
                 return description;
             }
+        }
+    }
+
+    public static class BrandEntity {
+        private int brand_id;
+        private String description;
+
+        public int getBrand_id() {
+            return brand_id;
+        }
+
+        public void setBrand_id(int brand_id) {
+            this.brand_id = brand_id;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        @Override
+        public String toString() {
+            return description;
+        }
+    }
+
+    public static class CategoryEntity {
+        private int category_id;
+        private String description;
+
+        public int getCategory_id() {
+            return category_id;
+        }
+
+        public void setCategory_id(int category_id) {
+            this.category_id = category_id;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        @Override
+        public String toString() {
+            return description;
         }
     }
 }
