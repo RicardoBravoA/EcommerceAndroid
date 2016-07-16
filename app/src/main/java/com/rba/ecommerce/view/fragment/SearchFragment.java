@@ -36,7 +36,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
     private TextView lblText;
     private AppCompatButton btnRetry;
     private LinearLayout linError, linSearch;
-    private List<FilterResponse.DataEntity> dataEntity;
+    private FilterResponse filterResponseList;
+    private List<FilterResponse.DataEntity> dataEntityList;
 
     public SearchFragment(){}
 
@@ -76,13 +77,13 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
                 public void onResponse(Call<FilterResponse> call, Response<FilterResponse> response) {
                     if(response.isSuccessful()){
 
-                        dataEntity = response.body().getData();
+                        dataEntityList = response.body().getData();
+                        filterResponseList = response.body();
 
-                        Log.i("x- brand", new Gson().toJson(dataEntity));
+                        Log.i("x- brand", new Gson().toJson(filterResponseList));
 
-                        tagGroupBrand.addTags(dataEntity);
-
-                        tagGroupBrand.setSelectedTag(0);
+                        tagGroupBrand.addTags(filterResponseList.getBrand());
+                        tagGroupCategory.addTags(filterResponseList.getCategory());
 
                     }else{
                         showError(true, getString(R.string.error_ocurred));
@@ -134,12 +135,13 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
     @Override
     public void onTagSelected(View view, int index) {
 
-        tagGroupCategory.removeAllViews();
-
         switch (view.getId()){
             case R.id.tagGroupBrand:
-                Log.i("x- category", new Gson().toJson(dataEntity.get(index).getCategory()));
-                tagGroupCategory.addTags(dataEntity.get(index).getCategory());
+                tagGroupCategory.removeAllViews();
+                Log.i("x- category", new Gson().toJson(dataEntityList.get(index).getCategory()));
+                tagGroupCategory.addTags(dataEntityList.get(index).getCategory());
+                break;
+            case R.id.tagGroupCategory:
                 break;
             default:
                 break;

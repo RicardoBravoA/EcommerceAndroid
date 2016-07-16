@@ -40,4 +40,6 @@
     <string name="price_text">S/. %1$s</string>
     <string name="number_product">%1$s Productos</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="menu_category">Categorías</string>
+    <string name="menu_brand">Marcas</string>
 </resources>

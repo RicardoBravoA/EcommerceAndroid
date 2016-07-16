@@ -12,31 +12,80 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.rba.ecommerce.util.control.menutag.TagGroup
-            android:id="@+id/tagGroupBrand"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:deselectedColor="@color/deselected_color"
-            app:deselectedFontColor="@color/deselected_font_color"
-            app:selectedColor="@color/selected_color"
-            app:selectedFontColor="@color/selected_font_color"
-            app:deselectTransitionMS="@integer/deselectedTransition"
-            app:selectTransitionMS="@integer/selectedTransition"
-            app:selectMode="required"/>
+            android:padding="10dp"
+            android:animateLayoutChanges="true"
+            app:cardUseCompatPadding="true">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <com.rba.ecommerce.util.control.menutag.TagGroup
-            android:id="@+id/tagGroupCategory"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_brand"
+                    android:padding="10dp"/>
+
+                <com.rba.ecommerce.util.control.menutag.TagGroup
+                    android:id="@+id/tagGroupBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:animateLayoutChanges="true"
+                    app:deselectedColor="@color/deselected_color"
+                    app:deselectedFontColor="@color/deselected_font_color"
+                    app:selectedColor="@color/selected_color"
+                    app:selectedFontColor="@color/selected_font_color"
+                    app:deselectTransitionMS="@integer/deselectedTransition"
+                    app:selectTransitionMS="@integer/selectedTransition"
+                    app:selectMode="single"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:animateLayoutChanges="true"
             android:layout_marginTop="10dp"
-            app:deselectedColor="@color/deselected_color"
-            app:deselectedFontColor="@color/deselected_font_color"
-            app:selectedColor="@color/selected_color"
-            app:selectedFontColor="@color/selected_font_color"
-            app:deselectTransitionMS="@integer/deselectedTransition"
-            app:selectTransitionMS="@integer/selectedTransition"
-            app:selectMode="single"/>
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_category"
+                    android:padding="10dp"/>
+
+                <com.rba.ecommerce.util.control.menutag.TagGroup
+                    android:id="@+id/tagGroupCategory"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:animateLayoutChanges="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:deselectedColor="@color/deselected_color"
+                    app:deselectedFontColor="@color/deselected_font_color"
+                    app:selectedColor="@color/selected_color"
+                    app:selectedFontColor="@color/selected_font_color"
+                    app:deselectTransitionMS="@integer/deselectedTransition"
+                    app:selectTransitionMS="@integer/selectedTransition"
+                    app:selectMode="single"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
