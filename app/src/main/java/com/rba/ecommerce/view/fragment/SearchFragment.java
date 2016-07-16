@@ -128,7 +128,16 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
     @Override
     public void onTagDeselected(View view, int index) {
 
-
+        switch (view.getId()){
+            case R.id.tagGroupBrand:
+                tagGroupCategory.removeAllViews();
+                tagGroupCategory.addTags(filterResponseList.getCategory());
+                break;
+            case R.id.tagGroupCategory:
+                break;
+            default:
+                break;
+        }
 
     }
 
