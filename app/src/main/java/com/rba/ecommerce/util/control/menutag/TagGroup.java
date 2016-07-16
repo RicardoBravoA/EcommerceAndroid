@@ -22,7 +22,7 @@ public class TagGroup<T> extends TagLayout implements TagListener {
     }
 
     private Context context;
-    private int tagHeight;
+    private int tagHeight, indexSelected = -1;
     private int selectedColor = -1;
     private int selectedFontColor = -1;
     private int unselectedColor = -1;
@@ -74,6 +74,7 @@ public class TagGroup<T> extends TagLayout implements TagListener {
     }
 
     private void init() {
+        indexSelected = -1;
         tagHeight = (int) (28 * getResources().getDisplayMetrics().density + 0.5f);
     }
 
@@ -137,8 +138,6 @@ public class TagGroup<T> extends TagLayout implements TagListener {
     }
 
     public void setSelectedTag(int index) {
-        View view = this;
-        Log.i("x- tg", ""+view.getId());
         Tag tag = (Tag) getChildAt(index);
         tag.select(this);
         if(mode == Mode.REQUIRED){
@@ -158,6 +157,7 @@ public class TagGroup<T> extends TagLayout implements TagListener {
 
         switch(mode){
             case SINGLE:
+                indexSelected = index;
             case REQUIRED:
                 for (int i = 0; i < getChildCount(); i++) {
                     Tag tag = (Tag) getChildAt(i);
@@ -178,8 +178,13 @@ public class TagGroup<T> extends TagLayout implements TagListener {
         }
     }
 
+    public void unSelect(){
+        indexSelected = -1;
+    }
+
     @Override
     public void onTagDeselected(View view, int index) {
+        indexSelected = -1;
         if (tagListener != null) {
             tagListener.onTagDeselected(this, index);
         }
@@ -191,6 +196,10 @@ public class TagGroup<T> extends TagLayout implements TagListener {
             return tag.isSelected();
         }
         return false;
+    }
+
+    public int getSelected(){
+        return  indexSelected;
     }
 
 }

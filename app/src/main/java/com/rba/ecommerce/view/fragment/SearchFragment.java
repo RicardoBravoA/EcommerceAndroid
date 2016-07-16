@@ -34,7 +34,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
 
     private TagGroup tagGroupBrand = null, tagGroupCategory = null;
     private TextView lblText;
-    private AppCompatButton btnRetry;
+    private AppCompatButton btnRetry, btnSearch;
     private LinearLayout linError, linSearch;
     private FilterResponse filterResponseList;
     private List<FilterResponse.DataEntity> dataEntityList;
@@ -60,10 +60,12 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
         linError = (LinearLayout) view.findViewById(R.id.linError);
         linSearch = (LinearLayout) view.findViewById(R.id.linSearch);
         btnRetry = (AppCompatButton) view.findViewById(R.id.btnRetry);
+        btnSearch = (AppCompatButton) view.findViewById(R.id.btnSearch);
 
         tagGroupCategory.setTagListener(this);
         tagGroupBrand.setTagListener(this);
         btnRetry.setOnClickListener(this);
+        btnSearch.setOnClickListener(this);
 
         getData();
     }
@@ -120,6 +122,13 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
             case R.id.btnRetry:
                 getData();
                 break;
+            case R.id.btnSearch:
+
+                Log.i("x- sel", ""+tagGroupBrand.isSelected(1));
+
+                Log.i("x- brand", ""+tagGroupBrand.getSelected());
+                Log.i("x- category", ""+tagGroupCategory.getSelected());
+                break;
             default:
                 break;
         }
@@ -147,6 +156,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Ta
         switch (view.getId()){
             case R.id.tagGroupBrand:
                 tagGroupCategory.removeAllViews();
+                tagGroupCategory.unSelect();
                 Log.i("x- category", new Gson().toJson(dataEntityList.get(index).getCategory()));
                 tagGroupCategory.addTags(dataEntityList.get(index).getCategory());
                 break;
